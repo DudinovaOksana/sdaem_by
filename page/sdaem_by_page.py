@@ -14,7 +14,7 @@ class SdaemByLocators:
     MORE_OPTIONS_TAB = (By.ID, "more_button_innerText")
     RENT_TYPES_CARDS_BLOCK = (By.XPATH, "//div[@class='rentTypesCardsBlock_cards']")
     RENT_TYPES_CARDS_BLOCK_BUTTON_LIST = (By.XPATH, "//div[@class='rentTypesCardsBlock_buttonList']")
-
+    SERVICE_PRICE_BUTTON = (By.ID, "services_price_button_innerText")
 
 class SdaemByPage(BasePage):
     def select_city(self, city: str) -> None:
@@ -65,3 +65,7 @@ class SdaemByPage(BasePage):
     def check_rent_types_cards_block_cards_button_list(self):
         check_rent_types_cards_block_cards_button_list = self.find_element(SdaemByLocators.RENT_TYPES_CARDS_BLOCK_BUTTON_LIST)
         check_rent_types_cards_block_cards_button_list.get_attribute('rentTypesCardsBlock_buttonList'), "Rent type cards button list is not present on the page"
+
+    def check_service_price_button(self):
+        check_service_price_button = self.find_element(SdaemByLocators.SERVICE_PRICE_BUTTON)
+        check_service_price_button.get_attribute('services_price_button_innerText'), "Service_price_button is not present on the page"

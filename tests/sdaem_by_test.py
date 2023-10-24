@@ -52,3 +52,8 @@ class TestSdaemBy:
         sdaem_by_page = SdaemByPage(driver)
         sdaem_by_page.check_rent_types_cards_block_cards()
 
+    def test_service_price_button(self, driver):
+        sdaem_by_page = SdaemByPage(driver, 'https://kamrad33.github.io/index.html')
+        sdaem_by_page.go_to_site()
+        sdaem_by_page = SdaemByPage(driver)
+        sdaem_by_page.check_service_price_button()
